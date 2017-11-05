@@ -1,0 +1,5 @@
+ValidateAddress.form:
+  title: 'ValidateAddress Testing Form'
+  description: 'Test ValidateAddress Form'
+  route_name: ValidateAddress.form
+  parent: system.admin_config_development

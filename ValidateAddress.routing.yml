@@ -1,0 +1,15 @@
+ValidateAddress.lookup:
+  path: '/admin/config/ValidateAddress'
+  defaults:
+    _controller: '\Drupal\ValidateAddress\Controller\ValidateAddress::LookupValidAddress'
+    _title: 'ValidateAddress Lookup Address'
+  requirements:
+    _permission: 'ValidateAddress Testing'
+
+ValidateAddress.form:
+  path: '/admin/config/ValidateAddressForm'
+  defaults:
+    _form: '\Drupal\ValidateAddress\Form\ValidateAddressForm'
+    _title: 'ValidateAddress Form'
+  requirements:
+    _permission: 'ValidateAddress Testing'
