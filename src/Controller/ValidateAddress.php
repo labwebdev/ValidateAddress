@@ -37,10 +37,24 @@ class ValidateAddress extends ControllerBase {
       $street_address = $_SESSION['street_address'];
       $city = $_SESSION['city'];
       $state = $_SESSION['state'];
-
-      return [
-        '#markup' => $this->APIService->LookupAddress($street_address,$city,$state)
-      ];
+      $arrLookup = $this->APIService->LookupAddress($street_address,$city,$state);
+      if ($arrLookup['valid'] == 1) {
+       return [
+         '#markup' => 'Valid Address: Yes<br>' .
+              'Zip Code: ' .  $arrLookup['zipcode'] . '<br>' .
+              'County: ' .  $arrLookup['county'] . '<br>' .
+              'Latitude: ' .  $arrLookup['latitude'] . '<br>' .
+              'Longitude: ' .  $arrLookup['longitude']
+       ];
+     }
+     else {
+       return [
+         '#markup' => 'Invalid Address<br>Error: ' . $arrLookup['error']
+       ];
+     }
+      // return [
+      //   '#markup' => $this->APIService->LookupAddress($street_address,$city,$state)
+      // ];
     }
 
 }
