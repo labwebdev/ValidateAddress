@@ -3,3 +3,5 @@ description: ValidateAddress uses SmartyStreets.com API Integration
 package: Custom
 type: module
 core: 8.x
+dependencies:
+  - smartystreetsapi:SmartyStreetsAPI
